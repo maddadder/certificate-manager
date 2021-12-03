@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-staging-dns
+  namespace: default
+spec:
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: rleecharlie@gmail.com
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: example-issuer-account-key
+    solvers:
+      - dns01:
+          route53:
+            accessKeyID: AKIA5N475DMNNQRKFCF3
+            region: us-west-2
+            secretAccessKeySecretRef:
+              name: route53-secret
+              key: secret-access-key
+            hostedZoneID: Z01441341SCK8Z4QBH21L

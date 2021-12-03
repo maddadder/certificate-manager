@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: leenet-route53-dns
+  namespace: default
+spec:
+  secretName: leenet-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+  dnsNames:
+    - leenet-route53-dns.leenet.link
