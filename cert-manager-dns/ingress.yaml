@@ -11,9 +11,20 @@ spec:
   tls:
     - hosts:
         - leenet.link
+        - www.leenet.link
       secretName: leenet-route53-dns-tls
   rules:
     - host: leenet.link
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: generate
+              port: 
+                number: 8502
+    - host: www.leenet.link
       http:
         paths:
         - path: /

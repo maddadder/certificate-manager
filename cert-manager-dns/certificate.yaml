@@ -10,3 +10,4 @@ spec:
     kind: Issuer
   dnsNames:
     - leenet.link
+    - www.leenet.link
