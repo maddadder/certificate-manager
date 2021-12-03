@@ -9,7 +9,7 @@ spec:
     email: rleecharlie@gmail.com
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
-      name: secret-access-key
+      name: example-issuer-account-key
     solvers:
       - dns01:
           route53:

@@ -7,6 +7,6 @@ spec:
   secretName: leenet-route53-dns-tls
   issuerRef:
     name: letsencrypt-staging-dns
-    kind: Issuer
+    kind: ClusterIssuer
   dnsNames:
     - leenet.link

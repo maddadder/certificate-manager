@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress-deploy-k8s-route53-dns
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/issuer: "letsencrypt-staging-dns"
+    cert-manager.io/acme-challenge-type: dns01
+spec:
+  tls:
+    - hosts:
+        - leenet.link
+      secretName: leenet-route53-dns-tls
+  rules:
+    - host: leenet.link
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: kuard-service
+              port: 
+                number: 80
