@@ -23,7 +23,7 @@ microk8s helm3 install cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --set installCRDs=true \
   --set ingressShim.defaultIssuerName=letsencrypt-production \
-  --set ingressShim.defaultIssuerKind=ClusterIssuer \
+  --set ingressShim.defaultIssuerKind=Issuer \
   --set ingressShim.defaultIssuerGroup=cert-manager.io
 
 microk8s kubectl apply -f letsencrypt-staging-issuer.yaml
