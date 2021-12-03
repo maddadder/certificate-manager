@@ -12,6 +12,8 @@ spec:
     - hosts:
         - leenet.link
         - www.leenet.link
+        - generate.leenet.link
+        - summary.leenet.link
       secretName: leenet-route53-dns-tls
   rules:
     - host: leenet.link
@@ -21,10 +23,20 @@ spec:
           pathType: Prefix
           backend:
             service: 
-              name: generate
+              name: csharpauth
               port: 
-                number: 8502
+                number: 80
     - host: www.leenet.link
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: csharpauth
+              port: 
+                number: 80
+    - host: generate.leenet.link
       http:
         paths:
         - path: /
@@ -34,3 +46,14 @@ spec:
               name: generate
               port: 
                 number: 8502
+    - host: summary.leenet.link
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: summary
+              port: 
+                number: 8501
+    

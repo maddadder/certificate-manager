@@ -11,3 +11,5 @@ spec:
   dnsNames:
     - leenet.link
     - www.leenet.link
+    - generate.leenet.link
+    - summary.leenet.link
