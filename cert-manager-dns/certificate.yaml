@@ -9,7 +9,5 @@ spec:
     name: letsencrypt-staging-dns
     kind: Issuer
   dnsNames:
-    - leenet.link
-    - www.leenet.link
-    - generate.leenet.link
-    - summary.leenet.link
+    - "leenet.link"
+    - "*.leenet.link"

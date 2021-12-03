@@ -10,10 +10,8 @@ metadata:
 spec:
   tls:
     - hosts:
-        - leenet.link
-        - www.leenet.link
-        - generate.leenet.link
-        - summary.leenet.link
+        - "leenet.link"
+        - "*.leenet.link"
       secretName: leenet-route53-dns-tls
   rules:
     - host: leenet.link
