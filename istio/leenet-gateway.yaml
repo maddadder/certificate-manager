@@ -27,8 +27,7 @@ spec:
   gateways:
   - leenet-gateway
   http:
-  - name: "leenet"
-    match:
+  - match:
     - uri:
         prefix: "/" #or prefix
     route:
@@ -47,8 +46,7 @@ spec:
   gateways:
   - leenet-gateway
   http:
-  - name: "www.leenet"
-    match:
+  - match:
     - uri:
         prefix: "/" #or prefix
     route:
@@ -67,8 +65,7 @@ spec:
   gateways:
   - leenet-gateway
   http:
-  - name: "summary-leenet"
-    match:
+  - match:
     - uri:
         prefix: "/"
     route:
@@ -87,8 +84,7 @@ spec:
   gateways:
   - leenet-gateway
   http:
-  - name: "generate-leenet"
-    match:
+  - match:
     - uri:
         prefix: "/"
     route:
@@ -107,8 +103,7 @@ spec:
   gateways:
   - leenet-gateway
   http:
-  - name: "blazorboilerplate-leenet"
-    match:
+  - match:
     - uri:
         prefix: "/"
     route:
