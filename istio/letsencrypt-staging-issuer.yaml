@@ -18,4 +18,4 @@ spec:
             secretAccessKeySecretRef:
               name: route53-secret
               key: secret-access-key
-            hostedZoneID: Z01441341SCK8Z4QBH21L
+#            hostedZoneID: Z01441341SCK8Z4QBH21L

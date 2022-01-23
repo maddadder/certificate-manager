@@ -16,6 +16,10 @@ spec:
     hosts:
     - "leenet.link"
     - "*.leenet.link"
+    - "leenet.lol"
+    - "*.leenet.lol"
+    - "charlierlee.com"
+    - "*.charlierlee.com"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -100,6 +104,10 @@ metadata:
 spec:
   hosts:
   - "blazorboilerplate.leenet.link"
+  - "leenet.lol"
+  - "charlierlee.com"
+  - "www.leenet.lol"
+  - "www.charlierlee.com"
   gateways:
   - leenet-gateway
   http:
