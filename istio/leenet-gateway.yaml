@@ -46,6 +46,16 @@ spec:
     tls:
       mode: SIMPLE
       credentialName: zambonigirl-com-route53-dns-tls
+  - hosts:
+    - "paintedravendesign.com"
+    - "*.paintedravendesign.com"
+    port:
+      number: 443
+      name: paintedravendesign-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: paintedravendesign-com-route53-dns-tls
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -163,5 +173,25 @@ spec:
     route:
       - destination:
           host: zambonigirl
+          port:
+            number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gateway-paintedravendesign.com
+spec:
+  hosts:
+  - "paintedravendesign.com"
+  - "www.paintedravendesign.com"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/" #or prefix
+    route:
+      - destination:
+          host: paintedravendesign
           port:
             number: 80

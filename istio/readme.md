@@ -8,3 +8,7 @@ microk8s kubectl apply -f istio-certificate.yaml
 microk8s kubectl apply -f istio-certificate-leenet.lol.yaml
 microk8s kubectl apply -f istio-certificate-charlierlee.com.yaml
 microk8s kubectl apply -f istio-certificate-zambonigirl.com.yaml
+microk8s kubectl apply -f istio-certificate-paintedravendesign.com.yaml
+
+# cert progress
+microk8s kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges --all-namespaces
