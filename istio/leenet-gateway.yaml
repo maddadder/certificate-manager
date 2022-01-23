@@ -6,20 +6,36 @@ spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
-  - port:
+  - hosts:
+    - "leenet.link"
+    - "*.leenet.link"
+    port:
       number: 443
-      name: https
+      name: leenet-link-https
       protocol: HTTPS
     tls:
       mode: SIMPLE
       credentialName: leenet-route53-dns-tls
-    hosts:
-    - "leenet.link"
-    - "*.leenet.link"
+  - hosts:
     - "leenet.lol"
     - "*.leenet.lol"
+    port:
+      number: 443
+      name: leenet-lol-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: leenet-lol-route53-dns-tls
+  - hosts:
     - "charlierlee.com"
     - "*.charlierlee.com"
+    port:
+      number: 443
+      name: charlierlee-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: charlierlee-com-route53-dns-tls
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
