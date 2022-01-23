@@ -36,6 +36,16 @@ spec:
     tls:
       mode: SIMPLE
       credentialName: charlierlee-com-route53-dns-tls
+  - hosts:
+    - "zambonigirl.com"
+    - "*.zambonigirl.com"
+    port:
+      number: 443
+      name: zambonigirl-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: zambonigirl-com-route53-dns-tls
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -135,3 +145,23 @@ spec:
           host: blazorboilerplate
           port:
             number: 53415
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gateway-zambonigirl.com
+spec:
+  hosts:
+  - "zambonigirl.com"
+  - "www.zambonigirl.com"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/" #or prefix
+    route:
+      - destination:
+          host: zambonigirl
+          port:
+            number: 80

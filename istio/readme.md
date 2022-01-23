@@ -7,3 +7,4 @@ microk8s kubectl apply -f letsencrypt-staging-issuer.yaml
 microk8s kubectl apply -f istio-certificate.yaml
 microk8s kubectl apply -f istio-certificate-leenet.lol.yaml
 microk8s kubectl apply -f istio-certificate-charlierlee.com.yaml
+microk8s kubectl apply -f istio-certificate-zambonigirl.com.yaml
