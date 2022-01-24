@@ -64,25 +64,9 @@ metadata:
 spec:
   hosts:
   - "leenet.link"
-  gateways:
-  - leenet-gateway
-  http:
-  - match:
-    - uri:
-        prefix: "/" #or prefix
-    route:
-      - destination:
-          host: csharpauth
-          port:
-            number: 80
----
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: gateway-www.leenet.link
-spec:
-  hosts:
   - "www.leenet.link"
+  - "charlierlee.com"
+  - "www.charlierlee.com"
   gateways:
   - leenet-gateway
   http:
@@ -141,9 +125,7 @@ spec:
   hosts:
   - "blazorboilerplate.leenet.link"
   - "leenet.lol"
-  - "charlierlee.com"
   - "www.leenet.lol"
-  - "www.charlierlee.com"
   gateways:
   - leenet-gateway
   http:
