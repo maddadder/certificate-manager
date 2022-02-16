@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: alexvassallo
+  namespace: istio-system
+spec:
+  host: "alexvassallo.com"
+  trafficPolicy:
+    tls:
+      mode: SIMPLE
+---
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: alexvassallo
+  namespace: istio-system
+spec:
+  hosts:
+    - alexvassallo.com
+  location: MESH_EXTERNAL
+  ports:
+    - number: 443
+      name: https
+      protocol: TLS
+  resolution: DNS
