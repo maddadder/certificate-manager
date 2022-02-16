@@ -93,10 +93,10 @@ spec:
         prefix: "/" #or prefix
     rewrite:
       uri: "/"
-      authority: alexvassallo.com
+      authority: www.amazon.com
     route:
       - destination:
-          host: alexvassallo.com
+          host: www.amazon.com
           port:
             number: 443
 ---
