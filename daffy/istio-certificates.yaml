@@ -1,0 +1,83 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: leenet-link-route53-dns
+  namespace: istio-system
+spec:
+  secretName: leenet-link-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "leenet.link"
+    - "*.leenet.link"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: charlierlee-com-route53-dns
+  namespace: istio-system
+spec:
+  secretName: charlierlee-com-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "charlierlee.com"
+    - "*.charlierlee.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: plhhoa-link-route53-dns
+  namespace: istio-system
+spec:
+  secretName: plhhoa-link-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "plhhoa.link"
+    - "*.plhhoa.link"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: leenet-lol-route53-dns
+  namespace: istio-system
+spec:
+  secretName: leenet-lol-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "leenet.lol"
+    - "*.leenet.lol"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: paintedravendesign-com-route53-dns
+  namespace: istio-system
+spec:
+  secretName: paintedravendesign-com-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "paintedravendesign.com"
+    - "*.paintedravendesign.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: zambonigirl-com-route53-dns
+  namespace: istio-system
+spec:
+  secretName: zambonigirl-com-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "zambonigirl.com"
+    - "*.zambonigirl.com"
