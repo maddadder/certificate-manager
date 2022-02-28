@@ -83,7 +83,7 @@ spec:
         prefix: "/" #or prefix
     route:
       - destination:
-          host: csharpauth
+          host: plhhoa
           port:
             number: 80
 ---
@@ -95,6 +95,26 @@ spec:
   hosts:
   - "leenet.link"
   - "www.leenet.link"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/" #or prefix
+    route:
+      - destination:
+          host: csharpauth
+          port:
+            number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gateway-leenet.lol
+spec:
+  hosts:
+  - "leenet.lol"
+  - "www.leenet.lol"
   gateways:
   - leenet-gateway
   http:
