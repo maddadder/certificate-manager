@@ -67,8 +67,10 @@ server = "http://192.168.1.151:32000"
 
 [host."192.168.1.151:32000"]
 capabilities = ["pull", "resolve"]
+```
 
-
+### on daffy 
+```
 microk8s kubectl create namespace cert-manager
 microk8s enable helm3
 microk8s kubectl create namespace cert-manager
