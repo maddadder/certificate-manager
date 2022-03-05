@@ -30,8 +30,8 @@ spec:
       authorizer: org.apache.cassandra.auth.CassandraAuthorizer
       role_manager: org.apache.cassandra.auth.CassandraRoleManager
     jvm-options:
-      initial_heap_size: 2G
-      max_heap_size: 2G
+      initial_heap_size: 1G
+      max_heap_size: 1G
       additional-jvm-opts:
       - -Dcassandra.system_distributed_replication_dc_names=dc1
       - -Dcassandra.system_distributed_replication_per_dc=1
