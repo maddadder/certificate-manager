@@ -83,7 +83,7 @@ spec:
         prefix: "/" #or prefix
     route:
       - destination:
-          host: csharpauth
+          host: plhhoa
           port:
             number: 80
 ---
