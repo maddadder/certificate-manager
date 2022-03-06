@@ -1,0 +1,8 @@
+install:
+  couchbaseOperator: true
+  adminissionController: true
+  couchbaseCluster: false
+  syncGateway: false
+
+couchbaseOperator:
+  name: operator
