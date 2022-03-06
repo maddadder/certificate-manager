@@ -19,7 +19,7 @@ kind: CouchbaseCluster
 metadata:
   name: my-couchbase
 spec:
-  image: couchbase/server:6.6.2  
+  image: couchbase/server:7.0.3
   security:
     adminSecret: my-couchbase-auth
   networking:
