@@ -99,3 +99,7 @@ kubectl apply -f leenet-gateway.yaml
 kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges --all-namespaces
 
 ```
+
+
+### patch postgress to use nodeport (if installed)
+kubectl patch svc acid-minimal-cluster --patch '{"spec": { "type": "NodePort", "ports": [ { "nodePort": 30001, "port": 5432, "protocol": "TCP", "targetPort": 5432 } ] } }'
