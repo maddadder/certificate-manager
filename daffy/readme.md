@@ -100,6 +100,14 @@ kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Chall
 
 ```
 
+### Add labels
+```
+kubectl label nodes daffy server=t530
+kubectl label nodes dizzy server=t530
+kubectl label nodes cassandra server=t530
+kubectl label nodes daffy-2 server=aurus
+kubectl label nodes dizzy-2 server=aurus
+```
 
 ### patch postgress to use nodeport (if installed)
 kubectl patch svc acid-minimal-cluster --patch '{"spec": { "type": "NodePort", "ports": [ { "nodePort": 30001, "port": 5432, "protocol": "TCP", "targetPort": 5432 } ] } }'
