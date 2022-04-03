@@ -1,0 +1,23 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: backup-exec
+spec:
+  template:
+    spec:
+      containers:
+        - name: couchbase-cluster-backup-create
+          image: couchbase/operator-backup:1.1.0
+          command: ["sleep"]
+          args: ["30000"] 
+          volumeMounts:
+            - name: "couchbase-cluster-backup-volume"
+              mountPath: "/data" 
+      volumes:
+        - name: couchbase-cluster-backup-volume
+          persistentVolumeClaim:
+            claimName: my-backup
+      restartPolicy: Never
+      serviceAccountName: backup-couchbase-operator-couchbase-cluster
+      nodeSelector:
+        kubernetes.io/hostname: cassandra
