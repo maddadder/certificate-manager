@@ -38,3 +38,4 @@ spec:
     - search
     - eventing
     - analytics
+  antiAffinity: true
