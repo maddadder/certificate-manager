@@ -29,7 +29,7 @@ spec:
   buckets:
     managed: true
   servers:
-  - size: 2
+  - size: 3
     name: all_services
     services:
     - data
