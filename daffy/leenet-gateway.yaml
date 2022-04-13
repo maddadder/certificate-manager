@@ -265,3 +265,22 @@ spec:
           host: solar
           port:
             number: 8511
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gateway-movies.leenet.link
+spec:
+  hosts:
+  - "movies.leenet.link"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+      - destination:
+          host: movie-recommender
+          port:
+            number: 2361

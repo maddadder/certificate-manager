@@ -18,6 +18,7 @@ kubectl apply -f couchbase-default-secret.yaml
 # label: hostPathProvisionerIdentity: labelname (that matches the node
 # that the pv is attached to)
 kubectl apply -f couchbase-cluster.yaml
+kubectl apply -f couchbase-bucket.yaml
 kubectl apply -f destination-rule.yaml
 ```
 
