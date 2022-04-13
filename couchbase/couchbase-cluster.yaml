@@ -12,6 +12,22 @@ spec:
     - data
   buckets:
     managed: true
+  cluster:
+    analyticsServiceMemoryQuota: 1Gi
+    autoCompaction:
+      databaseFragmentationThreshold:
+        percent: 30
+      tombstonePurgeInterval: 72h0m0s
+      viewFragmentationThreshold:
+        percent: 30
+    autoFailoverMaxCount: 3
+    autoFailoverOnDataDiskIssuesTimePeriod: 2m0s
+    autoFailoverTimeout: 2m0s
+    dataServiceMemoryQuota: 1024Mi
+    eventingServiceMemoryQuota: 256Mi
+    indexServiceMemoryQuota: 1024Mi
+    indexStorageSetting: plasma
+    searchServiceMemoryQuota: 1024Mi
   servers:
   - size: 3
     name: all_services
