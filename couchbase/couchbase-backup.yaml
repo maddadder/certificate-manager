@@ -3,9 +3,10 @@ kind: CouchbaseBackup
 metadata:
   name: my-backup
 spec:
-  strategy: full_incremental
+  #strategy: full_incremental
+  strategy: full_only
   full:
     schedule: "0 3 * * 0" 
-  incremental:
-    schedule: "0 3 * * 1-6" 
+  #incremental:
+  #  schedule: "0 3 * * 1-6" 
   size: 20Gi

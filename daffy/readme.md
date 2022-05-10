@@ -39,8 +39,9 @@ newgrp microk8s
 
 ### back on daffy
 ```
+microk8s enable community
 microk8s enable istio
-microk8s enable registry
+microk8s enable registry:size=128Gi
 ```
 
 ### on client
@@ -73,7 +74,6 @@ capabilities = ["pull", "resolve"]
 ```
 microk8s kubectl create namespace cert-manager
 microk8s enable helm3
-microk8s kubectl create namespace cert-manager
 microk8s helm3 repo add jetstack https://charts.jetstack.io
 microk8s helm3 repo update
 microk8s helm3 install cert-manager jetstack/cert-manager \

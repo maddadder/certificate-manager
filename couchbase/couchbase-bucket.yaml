@@ -8,4 +8,4 @@ spec:
   evictionPolicy: valueOnly
   ioPriority: low
   memoryQuota: 256Mi
-  replicas: 2
+  #replicas: 2

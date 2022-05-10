@@ -20,7 +20,7 @@ spec:
       tombstonePurgeInterval: 72h0m0s
       viewFragmentationThreshold:
         percent: 30
-    autoFailoverMaxCount: 3
+    #autoFailoverMaxCount: 3
     autoFailoverOnDataDiskIssuesTimePeriod: 2m0s
     autoFailoverTimeout: 2m0s
     dataServiceMemoryQuota: 1024Mi
@@ -29,7 +29,7 @@ spec:
     indexStorageSetting: plasma
     searchServiceMemoryQuota: 1024Mi
   servers:
-  - size: 3
+  - size: 1
     name: all_services
     services:
     - data
@@ -38,9 +38,14 @@ spec:
     - search
     - eventing
     - analytics
-  antiAffinity: true
+    pod:
+      spec:
+        nodeSelector:
+          kubernetes.io/hostname: master-0
+  antiAffinity: false
   backup:
+    image: couchbase/operator-backup:1.3.0 
     managed: true 
     serviceAccountName: backup-couchbase-operator-couchbase-cluster
     nodeSelector:
-      kubernetes.io/hostname: cassandra
+      kubernetes.io/hostname: master-0
