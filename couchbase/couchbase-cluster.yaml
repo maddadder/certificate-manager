@@ -63,5 +63,5 @@ spec:
         requests:
           storage: 10Gi
   securityContext:
-    runAsNonRoot: false
+    runAsNonRoot: true
     runAsUser: 1000
