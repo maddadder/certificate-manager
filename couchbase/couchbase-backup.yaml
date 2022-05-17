@@ -9,4 +9,4 @@ spec:
     schedule: "0 3 * * 0" 
   #incremental:
   #  schedule: "0 3 * * 1-6" 
-  size: 20Gi
+  size: 40Gi

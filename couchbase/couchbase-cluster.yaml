@@ -48,7 +48,7 @@ spec:
   backup:
     image: couchbase/operator-backup:1.3.0 
     managed: true 
-    serviceAccountName: backup-couchbase-operator-couchbase-cluster
+    serviceAccountName: couchbase-backup
     nodeSelector:
       kubernetes.io/hostname: master-0
   logging:

@@ -10,6 +10,7 @@ microk8s helm3 install couchbase-operator --values operator-values.yaml couchbas
 ```
 # https://docs.couchbase.com/operator/current/howto-couchbase-create.html
 kubectl apply -f couchbase-default-secret.yaml
+# NOTE: when you change the password make sure it matches the secret and visa-versa. Youe should let the operator set the password by updating this secret after it sets the default password
 
 # when applying the couchbase-cluster.yaml below, note the nodeselector
 # on the backup:. This should match where the pvc mount to
