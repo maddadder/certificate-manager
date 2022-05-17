@@ -284,3 +284,41 @@ spec:
           host: movie-recommender
           port:
             number: 2361
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gateway-nextjs-app.leenet.link
+spec:
+  hosts:
+  - "nextjs-app.leenet.link"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+      - destination:
+          host: nextjs-app
+          port:
+            number: 3000
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gateway-temporal.leenet.link
+spec:
+  hosts:
+  - "temporal.leenet.link"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+      - destination:
+          host: temporaltest-web
+          port:
+            number: 8088
