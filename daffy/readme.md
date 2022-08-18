@@ -111,3 +111,26 @@ kubectl label nodes dizzy-2 server=aurus
 
 ### patch postgress to use nodeport (if installed)
 kubectl patch svc acid-minimal-cluster --patch '{"spec": { "type": "NodePort", "ports": [ { "nodePort": 30001, "port": 5432, "protocol": "TCP", "targetPort": 5432 } ] } }'
+
+### Install temporal
+```
+see ./git3/helm-charts
+https://github.com/temporalio/helm-charts
+
+helm install \
+    --set server.replicaCount=1 \
+    --set cassandra.config.cluster_size=1 \
+    --set prometheus.enabled=false \
+    --set grafana.enabled=false \
+    --set elasticsearch.enabled=false \
+    temporaltest . --timeout 15m
+
+exec into temporal admin tools and run:
+tctl namespace register default
+tctl namespace default
+```
+
+### Uninstall temporal
+```
+helm uninstall temporaltest
+```
