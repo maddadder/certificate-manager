@@ -3,7 +3,7 @@
  - There is also a client machine which is the machine you are on
 ### daffy
 ```
-sudo snap install microk8s --classic --channel=latest/edge
+sudo snap install microk8s --classic --channel=1.24/stable
 sudo usermod -a -G microk8s alice
 sudo chown -f -R alice ~/.kube
 newgrp microk8s
