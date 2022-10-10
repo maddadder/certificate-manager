@@ -243,7 +243,7 @@ spec:
         prefix: "/"
     route:
       - destination:
-          host: couchclient
+          host: leenet-couchclient
           port:
             number: 5001
 ---
