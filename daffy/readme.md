@@ -117,6 +117,7 @@ kubectl patch svc acid-minimal-cluster --patch '{"spec": { "type": "NodePort", "
 see ./git3/helm-charts
 https://github.com/temporalio/helm-charts
 
+cd helm-charts
 helm install \
     --set server.replicaCount=1 \
     --set cassandra.config.cluster_size=1 \

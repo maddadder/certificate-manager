@@ -250,6 +250,25 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
+  name: gateway-plhhoa-couchclient.leenet.link
+spec:
+  hosts:
+  - "plhhoa-couchclient.leenet.link"
+  gateways:
+  - leenet-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+      - destination:
+          host: plhhoa-couchclient
+          port:
+            number: 5001
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
   name: gateway-solar.leenet.link
 spec:
   hosts:
