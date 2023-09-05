@@ -76,7 +76,7 @@ spec:
   - "plhhoa.link"
   - "www.plhhoa.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -96,7 +96,7 @@ spec:
   - "leenet.link"
   - "www.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -116,7 +116,7 @@ spec:
   - "leenet.lol"
   - "www.leenet.lol"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -136,7 +136,7 @@ spec:
   - "charlierlee.com"
   - "www.charlierlee.com"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -159,7 +159,7 @@ spec:
   - "zambonigirl.com"
   - "www.zambonigirl.com"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -179,7 +179,7 @@ spec:
   - "paintedravendesign.com"
   - "www.paintedravendesign.com"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -198,7 +198,7 @@ spec:
   hosts:
   - "marketcap.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -217,7 +217,7 @@ spec:
   hosts:
   - "couchbase.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -236,7 +236,7 @@ spec:
   hosts:
   - "couchclient.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -255,7 +255,7 @@ spec:
   hosts:
   - "plhhoa-couchclient.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -274,7 +274,7 @@ spec:
   hosts:
   - "solar.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -293,7 +293,7 @@ spec:
   hosts:
   - "movies.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -312,7 +312,7 @@ spec:
   hosts:
   - "nextjs-app.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -331,7 +331,7 @@ spec:
   hosts:
   - "temporal.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -350,7 +350,7 @@ spec:
   hosts:
   - "chatbot.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -369,7 +369,7 @@ spec:
   hosts:
   - "discord.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:

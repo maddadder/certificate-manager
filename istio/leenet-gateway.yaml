@@ -66,7 +66,7 @@ spec:
   - "leenet.link"
   - "www.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -86,7 +86,7 @@ spec:
   - "charlierlee.com"
   - "www.charlierlee.com"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -108,7 +108,7 @@ spec:
   hosts:
   - "summary.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -127,7 +127,7 @@ spec:
   hosts:
   - "generate.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -148,7 +148,7 @@ spec:
   - "leenet.lol"
   - "www.leenet.lol"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -168,7 +168,7 @@ spec:
   - "zambonigirl.com"
   - "www.zambonigirl.com"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -188,7 +188,7 @@ spec:
   - "paintedravendesign.com"
   - "www.paintedravendesign.com"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
@@ -207,7 +207,7 @@ spec:
   hosts:
   - "marketcap.leenet.link"
   gateways:
-  - leenet-gateway
+  - istio-system/leenet-gateway
   http:
   - match:
     - uri:
