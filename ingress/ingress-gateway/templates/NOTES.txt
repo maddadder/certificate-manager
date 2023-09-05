@@ -1,0 +1,2 @@
+1. Check the progress by running these commands:
+kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges --all-namespaces

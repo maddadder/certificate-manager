@@ -43,20 +43,6 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: leenet-lol-route53-dns
-  namespace: istio-system
-spec:
-  secretName: leenet-lol-route53-dns-tls
-  issuerRef:
-    name: letsencrypt-production-dns
-    kind: ClusterIssuer
-  dnsNames:
-    - "leenet.lol"
-    - "*.leenet.lol"
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
   name: paintedravendesign-com-route53-dns
   namespace: istio-system
 spec:
@@ -81,3 +67,17 @@ spec:
   dnsNames:
     - "zambonigirl.com"
     - "*.zambonigirl.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: whereatreeoncewas-com-route53-dns
+  namespace: istio-system
+spec:
+  secretName: whereatreeoncewas-com-route53-dns-tls
+  issuerRef:
+    name: letsencrypt-production-dns
+    kind: ClusterIssuer
+  dnsNames:
+    - "whereatreeoncewas.com"
+    - "*.whereatreeoncewas.com"
