@@ -1,0 +1,77 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: leenet-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - hosts:
+    - "*"
+    port:
+      number: 80
+      name: leenet-link-http
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+  - hosts:
+    - "leenet.link"
+    - "*.leenet.link"
+    port:
+      number: 443
+      name: leenet-link-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: leenet-link-route53-dns-tls
+  - hosts:
+    - "charlierlee.com"
+    - "*.charlierlee.com"
+    port:
+      number: 443
+      name: charlierlee-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: charlierlee-com-route53-dns-tls
+  - hosts:
+    - "plhhoa.link"
+    - "*.plhhoa.link"
+    port:
+      number: 443
+      name: plhhoa-link-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: plhhoa-link-route53-dns-tls
+  - hosts:
+    - "zambonigirl.com"
+    - "*.zambonigirl.com"
+    port:
+      number: 443
+      name: zambonigirl-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: zambonigirl-com-route53-dns-tls
+  - hosts:
+    - "paintedravendesign.com"
+    - "*.paintedravendesign.com"
+    port:
+      number: 443
+      name: paintedravendesign-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: paintedravendesign-com-route53-dns-tls
+  - hosts:
+    - "whereatreeoncewas.com"
+    - "*.whereatreeoncewas.com"
+    port:
+      number: 443
+      name: whereatreeoncewas-com-https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: whereatreeoncewas-com-route53-dns-tls

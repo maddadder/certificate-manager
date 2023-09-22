@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: nginx-system
+spec:
+  tls:
+    - hosts:
+      - charlierlee.com  # Replace with your hostname(s)
+      secretName: charlierlee-com-route53-dns-tls  # Reference the Secret with the certificate
+  rules:
+    - host: charlierlee.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kubernetes-dashboard
+                port:
+                  number: 443

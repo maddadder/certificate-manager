@@ -1,2 +1,3 @@
-setup.sh
-ingress/setup.md
+istio-ingress/setup.sh
+istio-ingress/setup.md
+nginx-ingress/setup.sh
