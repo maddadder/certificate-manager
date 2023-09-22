@@ -40,3 +40,19 @@ microk8s enable ingress
 ```
 microk8s enable metallb
 ```
+9. Enable registry
+```
+microk8s enable registry
+```
+10. Follow the instructions [here](https://microk8s.io/docs/registry-private)
+
+11. Edit your docker config on your local machine
+```
+sudo nano /etc/docker/daemon.json
+
+{
+  "insecure-registries" : ["10.141.241.175:32000"]
+}
+
+sudo systemctl restart docker
+```
